@@ -22,7 +22,7 @@ static int my_dev_close(struct inode* inode, struct file* file)
 // пdevice cb for device node ioctl
 static long my_dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 {
-    pr_info("My device ioctl cb is called\n");
+    pr_info("My device ioctl cb is called, cmd=%i arg=%li\n", cmd, arg);
     return 0;
 }
 
