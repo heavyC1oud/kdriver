@@ -135,7 +135,7 @@ static const struct of_device_id smilebrd_gpio_dt_ids[] = {
     { .compatible = "heavyc1oud,smilebrd_gpio", },
     {}
 };
-MODULE_DEVICE_TABLE(of, smilebrd_gpio_dt_ids);  // ПРОВЕРИТЬ НУЖНО ЛИ ЭТО
+MODULE_DEVICE_TABLE(of, smilebrd_gpio_dt_ids);
 
 static struct platform_driver smilebrd_gpio_drv = {
     .probe = smilebrd_gpio_probe,
@@ -153,7 +153,7 @@ static int smilebrd_i2c_probe(struct i2c_client* client, const struct i2c_device
     // int retval;
 
     // store pointer to device structure in the bus
-    i2c_set_clientdata(client, smilebrd);      // ПРОВЕРИТЬ НУЖНО ЛИ ЭТО
+    i2c_set_clientdata(client, smilebrd);
 
     // store pointer to I2C client into private structure
     smilebrd->i2c_dev = client;
@@ -166,7 +166,7 @@ static int smilebrd_i2c_probe(struct i2c_client* client, const struct i2c_device
 static int smilebrd_i2c_remove(struct i2c_client* client)
 {
     // get device structure from device bus
-    smilebrd = i2c_get_clientdata(client);      // ПРОВЕРИТЬ НУЖНО ЛИ ЭТО
+    smilebrd = i2c_get_clientdata(client);
 
     pr_info("smilebrd i2c remove\n");
 
